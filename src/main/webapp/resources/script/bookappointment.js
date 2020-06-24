@@ -130,7 +130,6 @@ var bookappointment={
 					console.log('result'+result);
 				});
 			 });
-			
-			
+
 		}
 }
