@@ -98,12 +98,10 @@ public class BookController {
 	private Result<AppointExecution> execute(@PathVariable("bookId") Long bookId, @RequestParam("studentId") Long studentId){
 		Result<AppointExecution> result;
 		AppointExecution execution=null;
-		
 		try{//手动try catch,在调用appoint方法时可能报错
 			execution=bookService.appoint(bookId, studentId);
 			result=new Result<AppointExecution>(true,execution);
-				return result; 
-				
+				return result;
 		} catch(NoNumberException e1) {
 			execution=new AppointExecution(bookId,AppointStateEnum.NO_NUMBER);
 			result=new Result<AppointExecution>(true,execution);
